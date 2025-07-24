@@ -38,7 +38,6 @@ resource "aws_db_instance" "sql_server" {
   allocated_storage       = 20
   username                = "adminuser"
   password                = "SecurePassw0rd!"
-  db_name                 = "mydatabase"
   vpc_security_group_ids  = [aws_security_group.sql_sg.id]
   db_subnet_group_name    = aws_db_subnet_group.sql_subnet_group.name
   skip_final_snapshot     = true
