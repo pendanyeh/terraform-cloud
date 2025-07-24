@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1" # Change to your preferred region
-}
-
 # Create a security group allowing SQL Server access (port 1433)
 resource "aws_security_group" "sql_sg" {
   name        = "sql-server-sg"
