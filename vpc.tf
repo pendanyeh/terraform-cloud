@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-west-1"
+}
+
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_support   = true
@@ -19,7 +23,7 @@ resource "aws_internet_gateway" "gw" {
 resource "aws_subnet" "subnet_a" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "us-west-1a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -30,7 +34,7 @@ resource "aws_subnet" "subnet_a" {
 resource "aws_subnet" "subnet_b" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "us-east-1b"
+  availability_zone       = "us-west-1c"
   map_public_ip_on_launch = true
 
   tags = {
